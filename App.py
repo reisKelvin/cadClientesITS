@@ -45,7 +45,7 @@ class App(ctk.CTk):
             cpf = valor_cpf.get()
             celular = valor_celular.get()
             carro = valor_carro.get()
-            combustivel = valor_combustivel.get()
+            combustivel = combustivel_entry.get()
 
             dataxls = openpyxl.load_workbook('cadastros.xlsx')
             abaxls = dataxls.active
@@ -64,7 +64,6 @@ class App(ctk.CTk):
             valor_cpf.set("")
             valor_celular.set("")
             valor_carro.set("")
-            valor_combustivel.set("")
 
 
         #Variaveis
@@ -79,7 +78,8 @@ class App(ctk.CTk):
         cpf_entry = ctk.CTkEntry(self,width = 200, textvariable=valor_cpf, font = ("Century Gothic", 16), fg_color="transparent")
         celular_entry = ctk.CTkEntry(self,width = 200, textvariable=valor_celular, font = ("Century Gothic", 16), fg_color="transparent")
         carro_entry = ctk.CTkEntry(self,width = 350, textvariable=valor_carro, font = ("Century Gothic", 16), fg_color="transparent")
-        combustivel_entry = ctk.CTkEntry(self,width = 350, textvariable=valor_combustivel, font = ("Century Gothic", 16), fg_color="transparent")
+        combustivel_entry = ctk.CTkComboBox(self, values=["Gasolina", "Álcool"], font = ("Century Gothic", 16))
+        combustivel_entry.set("Gasolina")
 
         #campos
         var_nome = ctk.CTkLabel(self, text="Nome",text_color=["#000", "#fff"], font=("Century Gothic Bold",16))
